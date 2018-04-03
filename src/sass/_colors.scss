@@ -1,0 +1,135 @@
+// Grays
+$gray-dark: #202020;
+$gray: #404040;
+$gray-medium: #777777;
+$gray-light: #dde4e7;
+$gray-xlight: #f6f6f6;
+
+$highlight: #ff9800;
+$yellow: #ffea00;
+$blue: #03c5dd;
+$light-blue: #89A1AC;
+$red: #ff2e48;
+$lime: #B5EB42;
+$matte: #546E7A;
+
+$info-border: 1px solid $gray-light;
+$info-gray: #838383;
+$info-icon-gray: #d2d2d2;
+
+// purple
+$alpha: #cb7dd1;
+
+// blue
+$bravo: #00c5dd;
+
+// orange
+$charlie: #f58a1f;
+
+// dark gray
+$delta: $gray-dark;
+
+// light green
+$echo: #b4ed2e;
+
+// slightly darker green
+$echo-dark: #8ebe1e;
+
+// pink
+$foxtrot: #f68eb1;
+
+// teal
+$golf: #1de9b6;
+
+.alpha {
+  color: $alpha;
+}
+
+.alpha-bg {
+  background: $alpha;
+}
+
+.bravo {
+  color: $bravo;
+}
+
+.bravo-bg {
+  background: $bravo;
+}
+
+.charlie {
+  color: $charlie;
+}
+
+.charlie-bg {
+  background: $charlie;
+}
+
+.delta {
+  color: $delta;
+}
+
+.delta-bg {
+  background: $delta;
+}
+
+.echo {
+  color: $echo;
+}
+
+.echo-dark {
+  color: $echo-dark;
+}
+
+.echo-bg {
+  background: $echo;
+}
+
+.foxtrot {
+  color: $foxtrot;
+}
+
+.foxtrot-bg {
+  background: $foxtrot;
+}
+
+.golf {
+  color: $golf;
+}
+
+.golf-bg {
+  background: $golf;
+}
+
+// Side Navigation
+$sn-dark: #273238;
+$sn-light: #36474e;
+$sn-light-active: lighten($sn-light, 5%);
+$sn-xlight: lighten($sn-light, 15%);
+
+$sn-text: #b5bcbe;
+$sn-text-active: white;
+$sn-icon: #89a1ac;
+
+// Borders, backgrounds & shadows
+$border-light: #ececec;
+$border-dark: rgba(0, 0, 0, 0.29);
+
+$background-default: $sn-light;
+
+// Used on varous elements including
+// selects, buttons, and more...
+$border-dark-shadow: $border-dark;
+$control-border: #dbdbd8;
+$control-bg-active: darken($gray-xlight, 3%);
+$control-border-active: darken($control-border, 10%);
+
+// Buttons
+$btn-primary: $red;
+$btn-primary-hover: #ff3e56;
+$btn-primary-active: #9c0e20;
+
+// Chart tabs
+$chart-tab-default: $gray-light;
+$chart-tab-secondary: $blue;
+$chart-tab-tertiary: $light-blue;

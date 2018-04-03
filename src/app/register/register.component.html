@@ -1,0 +1,33 @@
+﻿<div class= "login-container">
+    <div class="widget-form">
+        <img class="login-logo" src="assets/logo.png"/>
+        
+        <form class="login-form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate *ngIf="!loading">
+            <mat-form-field class="full-width" [hideRequiredMarker]="true">
+                <input  required matInput placeholder="User Name" name="username" [(ngModel)]="model.username">
+            </mat-form-field>
+            <mat-form-field class="full-width" [hideRequiredMarker]="true">
+                <input  required matInput placeholder="Email" name="email" [(ngModel)]="model.email">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width" [hideRequiredMarker]="true">
+                <input matInput type="password" required name="password" placeholder="Password" [(ngModel)]="model.password"> 
+            </mat-form-field>
+             <mat-form-field class="full-width" [hideRequiredMarker]="true">
+                <input matInput type="password" required name="confirmpassword" placeholder="Confirm Password" [(ngModel)]="model.confirmpassword"> 
+            </mat-form-field>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary btn-login">Sign-up</button>
+                <p style="color:white;margin-top:30px;">Already have an account? <a style="color:white" [routerLink]="['/login']" >Sign-In</a></p> 
+            </div>
+        </form>
+        <mat-progress-spinner *ngIf="loading" 
+            class="spinner-margin"
+            [color]="color"
+            [mode]="mode"
+            [diameter]="50">
+        </mat-progress-spinner>
+    </div>
+
+</div>
+

@@ -1,0 +1,144 @@
+.dropdown-item {
+  position: relative;
+
+  &:hover {
+    .dropdown {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
+}
+
+.dropdown {
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(116, 90, 90, 0.26);
+  color: $gray;
+  font-size: 14px;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: calc(100% - 4px);
+  transform: translateY(10px);
+  transition: all $ease-fast;
+  visibility: hidden;
+  width: 400px;
+  z-index: 2;
+
+
+  @include pointer($simple: true) {
+    left: auto;
+    right: 12px;
+  }
+
+  .context-nav {
+    background: transparent;
+    border-bottom: 1px solid $gray-light;
+
+    > ul {
+      width: 100%;
+
+      > li {
+
+        &.settings {
+          float: right;
+
+          a {
+            padding: 0;
+            text-align: right;
+          }
+
+          &.active {
+            &:after {
+              left: 0;
+              width: 22px;
+              bottom: -5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropdown-content {
+  .dropdown-content-inner {
+    min-height: 200px;
+    padding: 10px;
+  }
+
+  li {
+    cursor: default;
+    padding: 12px;
+
+    .overview {
+      @include container(100%);
+      margin-bottom: 10px;
+
+      p {
+        color: $gray-dark;
+        @include span(5 of 6);
+      }
+
+      .type {
+        color: $gray-medium;
+        font-style: italic;
+        text-align: right;
+        @include span(1 of 6 last);
+      }
+
+      ~ p {
+        color: $gray-medium;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  input[type=checkbox] + label {
+    display: block;
+    margin-bottom: 5px;
+    padding: 5px 0 10px 50px;
+
+    &:before {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .dropdown-list {
+    > li {
+      &:not(:last-child) {
+        border-bottom: 1px solid $gray-light;
+      }
+    }
+  }
+
+  .action-list {
+    li {
+      display: inline-block;
+      line-height: 26px;
+      padding: 0 6px;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      a {
+        @include link();
+        height: 26px;
+      }
+
+      &.complete {
+        color: $echo-dark;
+
+        [class*='icon-'] {
+          font-size: 16px;
+          vertical-align: text-bottom;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}

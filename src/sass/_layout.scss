@@ -1,0 +1,140 @@
+@import "layout_config";
+
+.container {
+  margin: 0;
+  padding: 0;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  transition: transform $ease-fast;
+  &.side-nav-open {
+    position: relative;
+    transform: translateX(220px);
+    .side-nav {
+      transform: translateX(-220px);
+    }
+  }
+}
+
+@include with-layout($smallLayout) {
+  $width: 70px;
+  .container {
+    @include container(100%);
+    .side-nav {
+      position: fixed;
+      top: 0;
+      visibility: hidden;
+      opacity: 0;
+      width: $width;
+      z-index: 0;
+    }
+    .side-nav-open{
+      opacity: 1;
+      transition: opacity 0.5s;
+      visibility: visible;
+      z-index: 1;
+    }
+    .sidebar-logo{
+      display:none;
+    }
+    .main {
+      float: right;
+      min-height: 100vh;
+      width: 100vw;
+    }
+  }
+}
+
+
+@include breakpoint($screen-sm-min) {
+  @include with-layout($mediumLayout) {
+    $width: 70px;
+    .container {
+      width: 100%;
+      .side-nav {
+        float: left;
+        opacity: 1;
+        margin: 0;
+/*        position: static;*/
+        position:fixed;
+        transform: translateX(0);
+        visibility: visible;
+        width: $width;
+        transition: width 0.3s;
+      }
+      .mini-sidebar-logo{
+        display:inline;
+      }
+      .sidebar-logo{
+        display:none;
+      }
+      .img-dashboard{
+        margin-right:0px;
+        margin-left:0px;
+      }
+      .main {
+        width: calc(100% - #{$width});
+        transition: width 0.3s;
+
+      }
+      .toggle-side-nav {
+        display: none;
+      }
+    }
+  }
+}
+
+
+@include breakpoint($screen-md-min) {
+  @include with-layout($largeLayout) {
+    $width: 220px;
+    .container {
+      @include container(100%);
+      .side-nav {
+        float: left;
+        /*position: static;*/
+        position:fixed;
+        width: $width;
+        .name {
+          display: inline-block;
+        }
+      }
+      .main {
+        width: calc(100% - #{$width});
+        transition: width 0.3s;
+
+      }
+    }
+  }
+  .side-nav {
+    li {
+      text-align:left;
+      a{
+        padding-left:30px!important;
+      }
+      .name {
+        display: inline-block;
+      }
+    }
+    .img-dashboard{
+      margin-right:10px
+    }
+    .account-info, .search-box {
+      display: block;
+    }
+    header {
+      .isp-logo-text {
+        display: inline-block;
+      }
+    }
+    .mini-sidebar-logo{
+      display:none;
+    }
+    .sidebar-logo{
+      display:inline;
+    }
+  }
+}

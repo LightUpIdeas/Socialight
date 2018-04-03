@@ -1,0 +1,34 @@
+$screen-xs: 480px !default;
+$screen-xs-min: $screen-xs !default;
+$screen-phone: $screen-xs-min !default;
+
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+
+$screen-md: 992px !default;
+$screen-md-min: $screen-md !default;
+
+$screen-lg: 1200px !default;
+$screen-lg-min: $screen-lg !default;
+
+$screen-xs-max: $screen-sm-min - 1 !default;
+$screen-sm-max: $screen-md-min - 1 !default;
+$screen-md-max: $screen-lg-min - 1 !default;
+
+
+.chart-container{
+	@include breakpoint(0 $screen-sm-min) {
+	    .chart-features{
+	      width:100%;
+	    }
+	    .chart-feature{
+	      width:80%;
+	      margin-right:10%;
+	      margin-left:10%;
+
+	    }
+	    .chart-context{
+	      width:100%;
+	    }
+	}
+}

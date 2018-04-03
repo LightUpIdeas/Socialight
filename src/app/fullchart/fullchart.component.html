@@ -1,0 +1,40 @@
+<div class="chart-container" style="min-width:500px">
+  <div class="chart-head">
+    <div class="chart-title">Generation</div>
+    <mat-form-field class="chart-filter">
+      <mat-select placeholder="Filter by">
+        <mat-option *ngFor="let filter of filters" [value]="filter.value">
+          {{ filter.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="chart-context" style="">
+  	<highcharts-chart 
+      [Highcharts]="Highcharts"
+      [options]="chartOptions"
+
+      style="width: 100%; height: 250px; display: block;"
+    ></highcharts-chart>
+  </div>
+  <div class="chart-features">
+
+    <div class="chart-feature">
+      <span class="feature-title">Highest Month</span>
+      <mat-divider class="feature-divider"></mat-divider>
+      <span class="feature-item">January</span>
+      <span class="feature-value">3000 tons</span>
+    </div>
+    <div class="chart-feature">
+      <span class="feature-title">Lowest Month</span>
+      <mat-divider class="feature-divider"></mat-divider>
+      <span class="feature-item">January</span>
+      <span class="feature-value">3000 tons</span>
+    </div>
+    <div class="chart-feature">
+      <span class="feature-title">Monthly Average</span>
+      <mat-divider class="feature-divider"></mat-divider>
+      <span class="feature-average">3000 tons</span>
+    </div>	
+  </div>
+</div>

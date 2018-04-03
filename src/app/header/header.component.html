@@ -1,0 +1,33 @@
+<header class="header">
+  <div class="context-bar">
+    <span class="toggle-side-nav icon-burger">
+    	<img class="toogle-nav inactive" [ngClass]="status? 'hidden' : ''" (click)="clickEvent()" src="/assets/navbar.png">
+    	<img class="toogle-nav active" [ngClass]="status? '' : 'hidden'" (click)="clickEvent()" src="/assets/navbar_active.png">
+    </span>
+    <div class="inner">
+
+     	<img class="img_thumb" src="http://placehold.it/32x32">
+        <span class="header-username"> Hi, Mark</span>
+		<button class="header-menu" style="vertical-align: middle" mat-icon-button [matMenuTriggerFor]="menu">
+		   
+	  		<img src="assets/arrow_down.png">
+		</button>
+		<mat-menu #menu="matMenu">
+			<button mat-menu-item>
+				<span>Profile</span>
+			</button>
+			<button mat-menu-item>
+				<span>Account</span>
+			</button>
+			<button mat-menu-item>
+				<span>Settings</span>
+			</button>
+			<button mat-menu-item>
+				<span>Logout</span>
+			</button>
+		</mat-menu>
+
+    </div>
+  </div>
+</header>
+

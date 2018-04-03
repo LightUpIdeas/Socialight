@@ -1,0 +1,104 @@
+@import "lib";
+@import "reset";
+@import "variables";
+@import "resp";
+@import "mixins";
+@import "buttons";
+@import "components";
+@import "layout";
+@import "forms";
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body, html {
+  /*background: $background-default;
+  color: $gray;*/
+  background: radial-gradient(#8b8b8b,#474747);
+  
+  font-family: "Enevo Font";
+  font-size: 14px;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+p {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $medium;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 13px;
+}
+
+.form-field {
+  border-radius: $base-radius;
+  border: 1px solid $gray-light;
+  background: white;
+  font-size: 14px;
+  outline: none;
+  padding: 8px 12px;
+  transition: border-color $ease-fast;
+
+  &.no-border {
+    border: none;
+  }
+
+  &:focus {
+    border-color: darken($gray-light, 10%);
+  }
+}
+
+select.form-field {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: border-box;
+  background: white url("../svg/arrow-down.svg") no-repeat calc(100% - 8px) 50%;
+  color: $gray;
+  cursor: pointer;
+  outline: none;
+  height: 35px;
+  padding: 0 35px 0 12px;
+  text-indent: 0.01px;
+  text-overflow: "";
+  @include rounded;
+}
+
+.notify-indicator {
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+// temporary class for all placeholders
+.placeholder {
+  background: $gray-light;
+}
+
+

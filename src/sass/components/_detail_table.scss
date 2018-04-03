@@ -1,0 +1,58 @@
+.detail-table {
+  margin-top: 20px;
+  width: 100%;
+
+  thead {
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  td {
+    padding: 10px 15px;
+  }
+
+  &:not(.chart-table) {
+    td {
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  &.chart-table {
+    tbody tr {
+      background: $gray-xlight;
+      border-bottom: 1px solid white;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $gray-light;
+      margin-bottom: 2px;
+
+      &.selected {
+        background: $gray-xlight;
+        border-bottom: 1px solid white;
+      }
+    }
+    td {
+      font-weight: 300;
+      color: #232323;
+
+      &:first-child {
+        font-weight: normal;
+        color: $gray;
+      }
+    }
+  }
+  .indicator {
+    border-radius: 50%;
+    display: inline-block;
+    height: 14px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 14px;
+  }
+}

@@ -1,0 +1,57 @@
+<div class="widget" style="width:100%">
+  	<header class="widget-head">
+    	<div class="widget-title">Recent Collections</div>
+  	</header>
+	<div class="widget-content">
+		<mat-table #table [dataSource]="dataSource" style="text-align:left;">
+
+		    <ng-container matColumnDef="siteName">
+		      	<mat-header-cell style="flex:0 0 30%;" *matHeaderCellDef > SITE NAME  </mat-header-cell>
+		      	<mat-cell style="flex:0 0 30%;" *matCellDef="let element"> {{element.siteName}} </mat-cell>
+		    </ng-container>
+
+		    <ng-container matColumnDef="content">
+		      	<mat-header-cell *matHeaderCellDef> CONTENT </mat-header-cell>
+		        <mat-cell class="content" *matCellDef="let element"> {{element.content}} </mat-cell>
+
+		    </ng-container>
+		    <ng-container matColumnDef="ncontainers">
+		      	<mat-header-cell *matHeaderCellDef> # OF CONTAINERS </mat-header-cell>
+		        <mat-cell *matCellDef="let element"> {{element.ncontainers}} </mat-cell>
+
+		    </ng-container>
+
+		    <ng-container matColumnDef="amount">
+		        <mat-header-cell *matHeaderCellDef> AMOUNT </mat-header-cell>
+		      	<mat-cell *matCellDef="let element"> {{element.amount}} </mat-cell>
+		    </ng-container>
+		    <ng-container matColumnDef="time">
+			    <mat-header-cell style="flex:0 0 15%;" *matHeaderCellDef> TIME </mat-header-cell>
+	 	      	<mat-cell style="flex:0 0 15%;" *matCellDef="let element"> 
+	 	      		<span class="time">{{element.time}}</span>
+	 	      		<span class="time under">{{element.date}}</span> 
+	 	      	</mat-cell>
+		    </ng-container>
+		    <ng-container  matColumnDef="fillpercent">
+		      	<mat-header-cell style="flex:0 0 25%;" *matHeaderCellDef> FILL % BEFORE VISITS </mat-header-cell>
+	 	      	<mat-cell style="flex:0 0 25%;width:100%" *matCellDef="let element"> 
+	 	      		<div style="width:20%;float:left;">{{element.fill}}%</div>
+	 	      		<div style="width:80%;float:left;margin-top:5px;">
+		 	      		<mat-progress-bar
+				          class="progress-border mat-accent"
+				          [color]="accent"
+				          [mode]="determinate"
+				          [value]="element.fill"
+				          [bufferValue]="bufferValue">
+				      </mat-progress-bar>
+				    </div>
+			  	</mat-cell>
+		    </ng-container>
+		   
+		    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+		    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+		</mat-table>
+		<mat-paginator [length]="5" [pageSize]="5" [pageSizeOptions]="[5, 10, 25]">
+  		</mat-paginator>
+	</div>
+</div>

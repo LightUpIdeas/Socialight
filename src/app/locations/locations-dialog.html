@@ -1,0 +1,61 @@
+<style type="text/css">
+  .example-form{
+    width:300px;
+    height:300px;
+  }
+  .example-full-width{
+    width:100%;
+  }
+  .half{
+    width:49%;
+  }
+</style>
+<form class="example-form" (ngSubmit)="f.form.valid && addAccount()" #f="ngForm">
+  <h5>Dados do Titular da Conta</h5>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nome/Razão Social" name="name" [(ngModel)]="model.name" [formControl]="nameFormControl">
+    <mat-error *ngIf="nameFormControl.hasError('required')">
+      Nome/Razão Social é um campo obrigatório
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="CPF/CNPJ" name="cpf" [(ngModel)]="model.cpf" [formControl]="cpfFormControl">
+    <mat-error *ngIf="cpfFormControl.hasError('required')">
+      CPF/CNPJ é um campo obrigatório
+    </mat-error>
+  </mat-form-field>
+    
+  <mat-form-field class="half">
+    <input matInput placeholder="Telefone" name="tel" [(ngModel)]="model.telefone" [formControl]="telFormControl">
+    <mat-error *ngIf="telFormControl.hasError('required')">
+      Telefone é um campo obrigatório
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="half">
+    <input matInput [matDatepicker]="picker" name="nasc" [(ngModel)]="model.nasc" [formControl]="nascFormControl"  placeholder="Data de nascimento">
+    <mat-error *ngIf="nascFormControl.hasError('required')">
+      Telefone é um campo obrigatório
+    </mat-error>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <h5>Dados da Conta do Instagram</h5>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Usuário" name="username" [(ngModel)]="model.username" [formControl]="emailFormControl">
+    <span matPrefix>@&nbsp;</span>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="half">
+    <input matInput [(ngModel)]="model.password" name="password" placeholder="Senha" type="password">
+  </mat-form-field>
+  <mat-form-field class="half">
+    <input matInput [(ngModel)]="model.confirm_password" name="confirm_password" placeholder="Confirmar senha" type='password'>
+  </mat-form-field>
+  <button mat-button (click)="onNoClick()" >Cancelar</button>
+  <button  type="submit" mat-button>Cadastrar</button>
+</form>

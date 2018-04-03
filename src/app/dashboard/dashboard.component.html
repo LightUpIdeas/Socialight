@@ -1,0 +1,44 @@
+<section class="page dashboard">
+  <h3 class="page-title">Dashboard</h3>
+  <div class="page-content two-col" style="overflow-x: scroll;padding:10px;">
+    <div class="widget half" >
+      <div class="widget-head">
+        <div class="widget-title">Locations</div>
+      </div>
+      <div class="widget-context">
+        <div class="locations-title">224</div>
+        <span>Total Locations</span>
+      </div>
+    </div>
+    
+    <div class="widget" style="max-height:480px;min-width: 400px;">
+      <app-halfchart></app-halfchart>
+    </div>
+
+    <div class="widget half" style="min-width: 400px;">
+      <div class="widget-head">
+        <div class="widget-title">Container Breakdown</div>
+      </div>
+      <div class="full-col" >
+        <div class="half-col">
+          <div class="breakdown-title">2,534</div>
+          <span>Total Locations</span>
+        </div>
+        <div class="half-col">
+          <div class="feature-subtitle">1200</div>
+          <span class="feature">Trash(containers)</span>
+          
+          <div class="top" style=""></div>
+
+          <div class="feature-subtitle">1389</div>
+          <span class="feature">Recycling(containers)</span>
+        </div>
+      </div>
+    </div>
+    <app-fullchart></app-fullchart>
+    <app-dashtable></app-dashtable>
+
+  </div>
+    
+     
+</section>

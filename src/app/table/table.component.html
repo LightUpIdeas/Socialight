@@ -1,0 +1,155 @@
+<div class="widget" style="min-width: 920px">
+  	<header class="table-head">
+    	<div class="table-title">Pick-Up Schedule</div>
+		<mat-card  class="table-filter">
+			<img class="material-icons" src="assets/search.png">
+      		<input class="filter-input" placeholder="" #input>
+		</mat-card>
+  	</header>
+	<div class="widget-content" >
+		<mat-table #table [dataSource]="dataSource">
+
+		    <ng-container matColumnDef="siteName">
+		      <mat-header-cell style="min-width: 120px;" *matHeaderCellDef > SITE NAME  </mat-header-cell>
+		      <mat-cell style="min-width: 120px;" *matCellDef="let element"> {{element.siteName}} </mat-cell>
+		    </ng-container>
+
+		    <ng-container matColumnDef="content">
+		      	<mat-header-cell class="less-flex" *matHeaderCellDef> CONTENT </mat-header-cell>
+		      	<mat-cell class="less-flex" *matCellDef="let element">
+		      		<div class="three-row">
+            			<span class="row-sub-item">{{element.content}}</span>
+            			<span class="row-sub-item">{{element.content}}</span>
+          				<span class="row-sub-item last">{{element.content}}</span>
+          			</div>  
+          		</mat-cell>
+		    </ng-container>
+		    <ng-container matColumnDef="quantity">
+		      	<mat-header-cell class="less-flex" *matHeaderCellDef> QUANTITY </mat-header-cell>
+		      	<mat-cell class="less-flex" *matCellDef="let element">
+		      		<div class="three-row">
+            			<span class="row-sub-item">{{element.quantity}}</span>
+            			<span class="row-sub-item">{{element.quantity}}</span>
+          				<span class="row-sub-item last">{{element.quantity}}</span>
+          			</div>  
+          		</mat-cell>
+		    </ng-container>
+
+		    <ng-container matColumnDef="type">
+		      <mat-header-cell class="less-flex" *matHeaderCellDef> TYPE </mat-header-cell>
+		      <mat-cell class="less-flex" *matCellDef="let element">
+		      		<div class="three-row">
+            			<span class="row-sub-item">{{element.type}}</span>
+            			<span class="row-sub-item">{{element.type}}</span>
+          				<span class="row-sub-item last">{{element.type}}</span>
+          			</div>  
+          		</mat-cell>
+		    </ng-container>
+		    <ng-container matColumnDef="containerSize">
+		      <mat-header-cell style="min-width: 120px;" *matHeaderCellDef> CONTAINER SIZE </mat-header-cell>
+		      <mat-cell style="min-width: 120px;" *matCellDef="let element">
+		      		<div class="three-row">
+            			<span class="row-sub-item">{{element.containerSize}}</span>
+            			<span class="row-sub-item">{{element.containerSize}}</span>
+          				<span class="row-sub-item last">{{element.containerSize}}</span>
+          			</div>  
+          		</mat-cell>
+		    </ng-container>
+		    <ng-container matColumnDef="collectionDays">
+		      	<mat-header-cell class="high-flex" *matHeaderCellDef> COLLECTION DAYS </mat-header-cell>
+		      	<mat-cell class="high-flex" *matCellDef="let element">
+		      		<div class="three-row">
+            			<div class="row-sub-item">
+            				<div class="time">
+            					<span class="day active-day">MON</span>
+            					<span class="day">TUE</span>
+            					<span class="day active-day">WED</span>
+            					<span class="day">THU</span>
+            					<span class="day active-day">FRI</span>
+            					<span class="day">SAT</span>
+            					<span class="day">SUN</span>
+            				</div>
+            				<div class="time">
+		 	      				<span class="time under">Every Week</span>
+			      				<span class="time under right">Active from 1/11/2018</span>
+		      				</div>
+	 	      			</div>
+						<div class="row-sub-item">
+            				<div class="time">
+            					<span class="day active-day">MON</span>
+            					<span class="day">TUE</span>
+            					<span class="day active-day">WED</span>
+            					<span class="day">THU</span>
+            					<span class="day active-day">FRI</span>
+            					<span class="day">SAT</span>
+            					<span class="day">SUN</span>
+            				</div>
+            				<div class="time">
+		 	      				<span class="time under">Every Week</span>
+			      				<span class="time under right">Active from 1/11/2018</span>
+		      				</div>
+	 	      			</div>
+	 	      			<div class="row-sub-item">
+            				<div class="time">
+            					<span class="day active-day">MON</span>
+            					<span class="day">TUE</span>
+            					<span class="day active-day">WED</span>
+            					<span class="day">THU</span>
+            					<span class="day active-day">FRI</span>
+            					<span class="day">SAT</span>
+            					<span class="day">SUN</span>
+            				</div>
+            				<div class="time">
+		 	      				<span class="time under">Every Week</span>
+			      				<span class="time under right">Active from 1/11/2018</span>
+		      				</div>
+	 	      			</div>
+	 	      		</div>
+          		</mat-cell>
+		    </ng-container>
+     		<ng-container matColumnDef="lastCollection">
+		      	<mat-header-cell style="min-width: 80px;max-width: 130px;" *matHeaderCellDef> LAST COLLECTION </mat-header-cell>
+		      	<mat-cell style="min-width: 80px;max-width: 130px;" *matCellDef="let element">
+		      		<div class="">
+						<div class="row-sub-item">
+            				<span class="time">Yesterday</span>
+	 	      				<span class="time under">Fri,09 Mar</span>
+	 	      			</div>            			
+						<div class="row-sub-item">
+            				<span class="time">Yesterday</span>
+	 	      				<span class="time under">Fri,09 Mar</span>
+	 	      			</div> 
+	 	      			<div class="row-sub-item">
+            				<span class="time">Yesterday</span>
+	 	      				<span class="time under">Fri,09 Mar</span>
+	 	      			</div>   
+          			</div>  
+          		</mat-cell>
+		    </ng-container>
+            <ng-container matColumnDef="nextCollection">
+		      	<mat-header-cell class="medium-flex" *matHeaderCellDef> NEXT COLLECTION </mat-header-cell>
+		      	<mat-cell class="medium-flex" *matCellDef="let element">
+		      		<div class="">
+            			<span class="row-sub-item">
+            				<span class="time">In 3 days</span>
+	 	      				<span class="time under">Mon March 13 @ 3:00 PM</span>
+	 	      			</span>
+						<span class="row-sub-item">
+            				<span class="time">In 3 days</span>
+	 	      				<span class="time under">Mon March 13 @ 3:00 PM</span>
+	 	      			</span>
+	 	      			<span class="row-sub-item">
+            				<span class="time">In 3 days</span>
+	 	      				<span class="time under">Mon March 13 @ 3:00 PM</span>
+	 	      			</span>
+	 	      		</div>
+          		</mat-cell>
+		    </ng-container>
+		    
+		    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+		    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+		</mat-table>
+		<mat-paginator [length]="5" [pageSize]="5" [pageSizeOptions]="[5, 10, 25]">
+  		</mat-paginator>
+	</div>
+</div>

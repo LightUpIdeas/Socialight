@@ -1,0 +1,36 @@
+<div class="chart-container" style="box-shadow: 0 0 0;-webkit-box-shadow:0 0 0;">
+  <div class="chart-head">
+    <div class="chart-title">Diversion Rate</div>
+    <mat-form-field class="chart-filter">
+      <mat-select placeholder="Filter by">
+        <mat-option *ngFor="let filter of filters" [value]="filter.value">
+          {{ filter.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="widget-title">
+    33<span class="title-percent">%</span>
+  </div>
+  <div class="widget-subtitle">
+    Current Diversion Rate
+  </div>
+  <div class="widget-features">
+    <div class="feature one">
+      <div class='blue-title'>3600</div>
+      <div class='gray-title'>Total Trash(tons)</div>
+    </div>
+    <div class="feature">
+      <div class='blue-title'>800</div>
+      <div class='gray-title'>Total Recycling</div>
+    </div>
+  </div> 
+  <div class="half-chart-context">
+    <highcharts-chart 
+      [Highcharts]="Highcharts"
+      [options]="halfChartOptions"
+      style="width: 100%; height: 200px; display: block;"
+    ></highcharts-chart>
+  </div>
+
+</div>

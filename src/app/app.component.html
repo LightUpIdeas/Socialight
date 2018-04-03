@@ -1,0 +1,19 @@
+<div class="container">
+  <app-sidebar-nav  *ngIf="authService.isbool"></app-sidebar-nav>
+  <main  [ngClass]="{
+    'main':authService.isbool==true,
+    'login':authService.isbool==false}">
+    <app-header  *ngIf="authService.isbool"></app-header>
+    <router-outlet></router-outlet>
+  </main>
+</div>  
+<!-- <div class="container">
+  <app-sidebar-nav  *ngIf="!authService.isbool"></app-sidebar-nav>
+  <main  [ngClass]="{
+    'main':authService.isbool==false,
+    'login':authService.isbool==true}">
+    <app-header  *ngIf="!authService.isbool"></app-header>
+    <router-outlet></router-outlet>
+  </main>
+</div>
+  -->

@@ -1,0 +1,84 @@
+.btn {
+  background: white;
+  border: 1px solid $control-border;
+  box-shadow: 0 1px 0 0 $border-dark-shadow;
+  color: $gray-medium;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: $medium;
+  line-height: 18px;
+  outline: none;
+  padding: 8px 15px;
+  vertical-align: middle;
+  @include rounded;
+
+  [class*="icon-"] {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
+  &:hover, &:focus {
+    background: $gray-xlight;
+  }
+
+  &.simple {
+    border: none;
+  }
+
+  &:active {
+    background: $control-bg-active;
+    border: 1px solid $control-border-active;
+    box-shadow: inset 0 0 0 1px darken($gray-xlight, 4%);
+  }
+
+  &.back {
+    padding: 7px 15px 6px 8px;
+  }
+
+  &.search {
+    color: $light-blue;
+    display: inline;
+    font-size: 18px;
+    padding: 8px 10px 6px;
+    vertical-align: middle;
+  }
+
+  &.btn-outline {
+    background: white;
+    box-shadow: none;
+    color: $btn-primary;
+    border-color: $btn-primary;
+
+    &:hover {
+      background: $btn-primary;
+      color: white;
+    }
+
+    &:active {
+      background: $btn-primary-active;
+      border-color: $btn-primary-active;
+      color: white;
+    }
+  }
+}
+
+.btn-sm {
+  padding: 2px 12px;
+}
+
+.btn-primary {
+  background: $btn-primary;
+  border-color: $btn-primary;
+  color: white;
+  box-shadow: 0 1px 0 0 $border-dark-shadow;
+  &:hover, &:focus {
+    background: $btn-primary-hover;
+  }
+
+  &:active {
+    background: $btn-primary-active;
+    box-shadow: none;
+    border-color: $btn-primary-active;
+  }
+}

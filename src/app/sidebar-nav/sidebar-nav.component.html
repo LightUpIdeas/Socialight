@@ -1,0 +1,26 @@
+<nav class="side-nav" style="text-align:center" [ngClass]="requestService.getSideBar() ? 'side-nav-open' : ''">
+
+  <header >
+    <img class="sidebar-logo" src="../assets/enevo-customer-portal-logo.svg" alt="Enevo - Customer Portal" width="140" height="38">
+    <img class="mini-sidebar-logo" src="../favicon.ico" alt="Enevo - Customer Portal" width="16" height="16">
+
+  </header>
+  <div class="content" >
+    <ul>
+      <li>
+        <a class="sidebar-link" routerLink="/dashboard" routerLinkActive="active">
+          <img class="inactive img-dashboard middle" src="assets/dashboard.png">
+          <img class="imgactive img-dashboard middle" src="assets/dashboard_active.png">
+          <span class="name">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a class="sidebar-link" routerLink="/locations" routerLinkActive="active">
+          <img class="inactive img-dashboard middle" src="assets/locations.png">
+          <img class="imgactive img-dashboard middle" src="assets/locations_active.png">
+          <span class="name">Locations</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

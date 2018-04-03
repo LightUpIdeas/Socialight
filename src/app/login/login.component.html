@@ -1,0 +1,28 @@
+﻿<div class= "login-container">
+    <div class="widget-form">
+        <img class="login-logo" src="assets/logo.png"/>
+        
+        <form class="login-form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate *ngIf="!loading">
+            <mat-form-field class="full-width" [hideRequiredMarker]="true">
+                <input  required matInput placeholder="User Name" name="username" [(ngModel)]="model.username">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width" [hideRequiredMarker]="true">
+                <input matInput type="password" required name="password" placeholder="Password" [(ngModel)]="model.password"> 
+
+            </mat-form-field>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary btn-login">Sign-in</button>
+                <p style="color:white;margin-top:30px;">Don't have an account? <a style="color:white" [routerLink]="['/register']" >Sign-Up</a></p> 
+            </div>
+        </form>
+        <mat-progress-spinner *ngIf="loading" 
+            class="spinner-margin"
+            [color]="color"
+            [mode]="mode"
+            [diameter]="50">
+        </mat-progress-spinner>
+    </div>
+
+</div>
+

@@ -1,0 +1,49 @@
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: all $ease;
+
+  body.modal-open & {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.modal-overlay {
+  background: rgba(0,0,0,0.4);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 30px;
+  position: relative;
+  width: calc(100% - 20px);
+
+  @include breakpoint($screen-sm) {
+    margin: 100px auto 0;
+    width: 740px;
+  }
+
+  .info-section {
+    margin-bottom: 30px;
+
+    h4 {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.modal-close {
+  color: $red;
+  cursor: pointer;
+  font-size: 24px;
+  right: 30px;
+  position: absolute;
+  top: 30px;
+}

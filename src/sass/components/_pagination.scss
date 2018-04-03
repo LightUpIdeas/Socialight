@@ -1,0 +1,25 @@
+.pagination {
+  vertical-align: middle;
+
+  .btn {
+    color: $light-blue;
+    display: inline-block;
+    padding: 8px 10px 6px;
+    vertical-align: middle;
+  }
+
+  .info {
+    margin-right: 10px;
+    font-weight: $bold;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .controls {
+    display: inline-block;
+
+    .btn:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
